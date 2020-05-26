@@ -2,9 +2,9 @@
 
 Here is an unofficial documentation for Metal and MPS (Metal Performance Shaders) from Apple. The assumed readers are ML (machine learning) engineers as only topics about how to use Metal and MPS on ML will be covered. Readers are supposed to have some very basic understanding of the following things:
 
-- machine learning concept (*like functionality of ops*)
-- C++ (*even better with Objective-C*)
-- CUDA (*even better with OpenCL*)
+- machine learning concept *(like functionality of ops)*
+- C++ *(Objective-C? even better)*
+- CUDA *(OpenCL? even better)*
 
 Both Metal and MPS offers two kinds of bindings: Swift and Objective-C. For a better interpolation between C++ and Python, which are essentially used in machine learning, here we choose Objective-C binding.
 
