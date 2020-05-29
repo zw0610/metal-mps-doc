@@ -70,7 +70,7 @@ id<MTLDevice> device = MTLCreateSystemDefaultDevice();
 
 The type of a Metal Device is named as [`MTLDevice`](https://developer.apple.com/documentation/metal/mtldevice?language=objc).
 
-*All Metal APIs, including MPS APIs, starts with 3 all capital words: `MTL`.*
+*All Metal APIs, including MPS APIs, starts with 3 capital words: `MTL`.*
 
 If there are multiple Metal devices attached to the machine, [`MTLCopyAllDevices`](https://developer.apple.com/documentation/metal/1433367-mtlcopyalldevices?language=objc) can help developers to get all of them.
 
@@ -139,7 +139,7 @@ To extract a [`MTLFunction`](https://developer.apple.com/documentation/metal/mtl
 id<MTLFunction> addVecFunc = [defaultLibrary newFunctionWithName:@"add_arrays"];
 ```
 
-### Pipeline Status
+### Pipeline State
 
 According to the [example](https://developer.apple.com/documentation/metal/basic_tasks_and_concepts/performing_calculations_on_a_gpu?preferredLanguage=occ) from Apple, the function we just extracted is not executable code but a proxy. In Metal, [`MTLComputePipelineState`](https://developer.apple.com/documentation/metal/mtlcomputepipelinestate?language=objc) is needed to convert `MTLFunction` to `MTLComputePipelineState` with `MTLDevice` method [`newComputePipelineStateWithFunction`](https://developer.apple.com/documentation/metal/mtldevice/1433427-newcomputepipelinestatewithfunct?language=objc).
 
@@ -200,7 +200,7 @@ MTLSize threadPerGroupSize  = MTLSizeMake(threadGroupNumber, 1, 1);
 
 ### Finish Command Encoder
 
-Once the function pipeline status and arguments are all set, we can end the encoding:
+Once the function pipeline state and arguments are all set, we can end the encoding:
 
 ```Objective-C
 [computeEncoder endEncoding];
@@ -235,7 +235,7 @@ for (size_t i=0; i<array_length; i++) {
     if (verify_ptr_a[i] + verify_ptr_b[i] != verify_ptr_c[i]) {
         NSLog(@"At position %zu: %f + %f != %f", i, verify_ptr_a[i], verify_ptr_b[i], verify_ptr_c[i]);
     } else {
-         NSLog(@"At position %zu: %f + %f == %f", i, verify_ptr_a[i], verify_ptr_b[i], verify_ptr_c[i]);
+        NSLog(@"At position %zu: %f + %f == %f", i, verify_ptr_a[i], verify_ptr_b[i], verify_ptr_c[i]);
     }
 }
 ```
